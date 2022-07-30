@@ -1,4 +1,8 @@
--- create database bank;
+--create database bank;
+
+-- CREATE TYPE "phone_type" AS ENUM ('landline', 'mobile');
+
+-- CREATE TYPE "transaction_type" AS ENUM ('deposit', 'withdraw');
 
 -- create table "states" (
 -- 	"id" serial PRIMARY KEY,
@@ -11,9 +15,13 @@
 -- 	"stateId" INTEGER NOT NULL references "states"("id")
 -- );
 
--- CREATE TYPE "phone_type" AS ENUM ('landline', 'mobile');
-
--- CREATE TYPE "transaction_type" AS ENUM ('deposit', 'withdraw');
+-- create table "customers" (
+-- 	"id" serial PRIMARY KEY,
+-- 	cpf varchar(11) NOT NULL UNIQUE,
+-- 	"fullName" varchar(250) NOT NULL,
+-- 	"email" varchar(150) NOT NULL,
+-- 	"password" varchar(200) NOT NULL
+-- );
 
 -- create table "customerPhones" (
 -- 	"id" serial PRIMARY KEY,
@@ -30,14 +38,6 @@
 -- 	"complement" varchar(200),
 -- 	"postalCode" varchar(12) NOT NULL,
 -- 	"cityId" INTEGER NOT NULL references "cities"("id")
--- );
-
--- create table "customers" (
--- 	"id" serial PRIMARY KEY,
--- 	cpf varchar(11) NOT NULL UNIQUE,
--- 	"fullName" varchar(250) NOT NULL,
--- 	"email" varchar(150) NOT NULL,
--- 	"password" varchar(200) NOT NULL
 -- );
 
 -- create table "bankAccount" (
@@ -70,3 +70,5 @@
 -- 	"password" integer NOT NULL,
 -- 	"limit" integer NOT NULL
 -- );
+
+
